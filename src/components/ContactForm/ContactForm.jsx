@@ -32,7 +32,7 @@ export default class ContactForm extends Component {
     this.setState({ ...INITIAL_STATE });
 
     return onSubmit({
-      name: form.name.value,
+      name: form.name.value.trim(),
       number: form.number.value,
       id: nanoid(),
     });
