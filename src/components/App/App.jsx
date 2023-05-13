@@ -30,9 +30,12 @@ export class App extends Component {
   };
 
   componentDidMount = () => {
-    this.setState({
-      contacts: JSON.parse(localStorage.getItem(LOCAL_KEY)),
-    });
+    const localContacts = JSON.parse(localStorage.getItem(LOCAL_KEY));
+    if (localContacts) {
+      this.setState({
+        contacts: localContacts,
+      });
+    }
   };
 
   componentDidUpdate = (_, prevState) => {
